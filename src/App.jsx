@@ -10,6 +10,7 @@ import EnqueryForm from './pages/EnqueryForm'
 import Contact from './pages/Contact'
 import Automation from './pages/Automation';
 import TestSolutionsTable from './pages/testSolutionsTable';
+import ErrorPage from './component/ui/ErrorPage';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       path : '/',
       element: <AppLayout/>,
       loader:rootLoader,
+      errorElement: <ErrorPage />,
       children:[
         {
           path:"/",

@@ -130,7 +130,7 @@ const About = () => {
           {industries.map((item, index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded-md flex flex-col items-center p-4 w-full h-38 hover:bg-blue-200 hover:shadow-xl transition duration-300 cursor-pointer"
+              className="bg-white shadow-md rounded-md flex flex-col items-center p-4 w-full h-38 hover:bg-blue-100 hover:shadow-xl transition duration-300 cursor-pointer"
             >
               <img
                 src={item.icon}

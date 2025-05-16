@@ -16,14 +16,14 @@ const Footer = () => {
           <h2 className="text-2xl font-bold text-white">
             Get in touch with our experts,&nbsp;
             <a
-              href="tel:+917312422330"
+              href="tel:+91-9997547656"
               className="underline text-white hover:text-orange-400 transition"
             >
-              Call +91-000-242 0000
+              Call +91-9997547656
             </a>
             &nbsp;or&nbsp;
             <a
-              href="mailto:info@example.com"
+              href="info@ethotron.com"
               className="underline text-white hover:text-orange-400 transition"
             >
               Write to us
