@@ -64,7 +64,7 @@ const Automation = () => {
           {capabilities.map((cap, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition"
+              className="bg-white hover:bg-blue-100 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 cursor-pointer"
             >
               <h3 className="text-xl font-semibold text-gray-800 mb-2 whitespace-pre-line">
                 {cap.title}

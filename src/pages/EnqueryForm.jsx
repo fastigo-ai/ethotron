@@ -5,7 +5,6 @@ const EnqueryForm = () => {
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm();
@@ -50,46 +49,120 @@ const EnqueryForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="max-w-xl mx-auto p-6 border rounded space-y-4">
-      <h2 className="text-lg font-bold">Enquiry Form</h2>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8 space-y-6"
+    >
+      <h2 className="text-2xl font-bold text-center text-blue-900">Enquiry Form</h2>
 
-      <input {...register('fullName', { required: true })} placeholder="Full Name *" className="border p-2 w-full" />
-      {errors.fullName && <span className="text-red-500 text-sm">Full Name is required</span>}
-
-      <input {...register('company', { required: true })} placeholder="Company Name *" className="border p-2 w-full" />
-      {errors.company && <span className="text-red-500 text-sm">Company Name is required</span>}
-
-      <input type="email" {...register('email', { required: true })} placeholder="Email Address *" className="border p-2 w-full" />
-      {errors.email && <span className="text-red-500 text-sm">Email is required</span>}
-
-      <input type="text" {...register('whatsapp', { required: true })} placeholder="Mobile / WhatsApp Number *" className="border p-2 w-full" />
-      {errors.whatsapp && <span className="text-red-500 text-sm">Mobile number is required</span>}
-
+      {/* Full Name */}
       <div>
-        <label className="font-semibold">Area of Interest *</label>
-        {[
-          'PCB Testing Fixtures',
-          'Special Purpose Machines (SPMs)',
-          'Testing & Measuring Instruments',
-          'SMT Consumables & Spare Parts',
-        ].map((item) => (
-          <label key={item} className="block">
-            <input type="checkbox" value={item} {...register('interest')} className="mr-2" />
-            {item}
-          </label>
-        ))}
+        <input
+          {...register('fullName', { required: true })}
+          placeholder="Full Name *"
+          className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-blue-500"
+        />
+        {errors.fullName && (
+          <p className="text-sm text-red-500 mt-1">Full Name is required</p>
+        )}
       </div>
 
-      <input type="text" {...register('other')} placeholder="Other Area of Interest" className="border p-2 w-full" />
-      <div>Your Requirement/Message</div>
-      <textarea {...register('message')} placeholder="Your Requirements / Message" className="border p-2 w-full" rows={4}></textarea>
-
+      {/* Company Name */}
       <div>
-        <label className="font-semibold">Upload File (Optional)</label>
-        <input type="file" {...register('file')} className="block mt-1" />
+        <input
+          {...register('company', { required: true })}
+          placeholder="Company Name *"
+          className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-blue-500"
+        />
+        {errors.company && (
+          <p className="text-sm text-red-500 mt-1">Company Name is required</p>
+        )}
       </div>
 
-      <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Submit</button>
+      {/* Email */}
+      <div>
+        <input
+          type="email"
+          {...register('email', { required: true })}
+          placeholder="Email Address *"
+          className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-blue-500"
+        />
+        {errors.email && (
+          <p className="text-sm text-red-500 mt-1">Email is required</p>
+        )}
+      </div>
+
+      {/* WhatsApp Number */}
+      <div>
+        <input
+          type="text"
+          {...register('whatsapp', { required: true })}
+          placeholder="Mobile / WhatsApp Number *"
+          className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-blue-500"
+        />
+        {errors.whatsapp && (
+          <p className="text-sm text-red-500 mt-1">Mobile number is required</p>
+        )}
+      </div>
+
+      {/* Area of Interest */}
+      <div>
+        <label className="font-semibold block mb-2">Area of Interest *</label>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {[
+            'PCB Testing Fixtures',
+            'Special Purpose Machines (SPMs)',
+            'Testing & Measuring Instruments',
+            'SMT Consumables & Spare Parts',
+          ].map((item) => (
+            <label key={item} className="flex items-center space-x-2">
+              <input type="checkbox" value={item} {...register('interest')} />
+              <span className="text-gray-700">{item}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Other Interest */}
+      <div>
+        <input
+          type="text"
+          {...register('other')}
+          placeholder="Other Area of Interest"
+          className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      {/* Message */}
+      <div>
+        <label className="font-semibold block mb-2">Your Requirements / Message</label>
+        <textarea
+          {...register('message')}
+          placeholder="Type here..."
+          rows={4}
+          className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-blue-500"
+        ></textarea>
+      </div>
+
+      {/* File Upload */}
+      <div>
+        <label className="font-semibold block mb-2">Upload File (Optional)</label>
+        <input
+          type="file"
+          {...register('file')}
+          className="block w-full border border-gray-300 rounded-md p-2 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200"
+        />
+      </div>
+
+      {/* Submit Button */}
+      <div className="text-center">
+        <button
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-200"
+        >
+          Submit Enquiry
+        </button>
+      </div>
     </form>
   );
 };

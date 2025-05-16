@@ -5,8 +5,8 @@ const TestSolutionsTable = () => {
   const { columns, partners, products } = testSolutionsData;
 
   return (
-    <div className="overflow-auto border rounded-lg shadow text-sm">
-      <table className="min-w-full table-fixed border-collapse">
+    <div className="overflow-auto border rounded-lg shadow text-sm ">
+      <table className="min-w-full table-fixed border-collapse mt-2">
         <thead>
           <tr>
             <th className="bg-yellow-300 border px-4 py-2 w-40">Test Solutions</th>

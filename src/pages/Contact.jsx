@@ -1,46 +1,61 @@
 import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
-import R from '../assets/product/R.jpg'
+import R from '../assets/New folder/medium.png';
+import Left from '../assets/New folder/R.jpg';
 
 const Contact = () => {
   return (
-    <div className="flex flex-col md:flex-row items-start justify-center gap-2 p-4 bg-gray-50">
-      {/* Left Image */}
-      <img
-        src={R} // Replace with your actual image path
-        alt="Building Left"
-        className="w-full md:w-1/4 object-cover rounded-md shadow"
-      />
+    <div className="bg-gray-50 py-8 px-4 md:px-10">
+      <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-6 max-w-7xl mx-auto">
+        
+        {/* Left Image */}
+        <div className="w-full md:w-1/4 mt-8">
+          <img
+            src={R}
+            alt="Building Left"
+            className="rounded-xl shadow-lg object-cover w-full h-full"
+          />
+        </div>
 
-      {/* Contact Card */}
-      <div className="w-full md:w-1/2 flex justify-center">
-        <div className="bg-white shadow border rounded-md text-sm w-full max-w-md">
-          <div className="bg-orange-500 text-white px-4 py-2 font-semibold">
-            Delhi Office
-          </div>
-          <div className="p-4 space-y-2">
-            <p className="flex"><MapPin className="w-4 h-4 mt-1 mr-2" /> Ethotron Pvt Ltd
-              , AHS-514, 5th Floor, Aditya High Street, South Side GT Road Industrial Area
-              Lal kuan, Ghaziabad-201009
-            </p>
-            <p className="flex"><Phone className="w-4 h-4 mr-2" /> +91-9997547656</p>
-            {/* <p className="flex"><Phone className="w-4 h-4 mr-2" /> 011-26950011</p> */}
-            <p className="flex"><Mail className="w-4 h-4 mr-2" /> info@ethotron.com</p>
-            <div className="pt-2 border-t text-xs">
-              <p><strong>Area Manager:</strong> Mr. Sunil Grover</p>
-              <p><strong>Email:</strong> sunilgrover@aimil.com</p>
-              <p><strong>State/UT Catered:</strong> Delhi & NCR, Haryana (except Ambala & Panchkula), Rajasthan, Uttar Pradesh, Uttarakhand</p>
+        {/* Contact Card */}
+        <div className="w-full md:w-1/2">
+          <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+            <div className="bg-orange-500 text-white px-6 py-3 text-lg font-semibold">
+              Delhi Office
+            </div>
+            <div className="p-6 space-y-4 text-gray-700 text-sm leading-relaxed">
+              <p className="flex items-start">
+                <MapPin className="w-5 h-5 mt-1 mr-2 text-orange-600" />
+                <span>
+                  <strong>Ethotron Pvt Ltd</strong>, AHS-514, 5th Floor, Aditya High Street, South Side GT Road Industrial Area,
+                  Lal Kuan, Ghaziabad - 201009
+                </span>
+              </p>
+              <p className="flex items-center">
+                <Phone className="w-5 h-5 mr-2 text-orange-600" /> +91-9997547656
+              </p>
+              <p className="flex items-center">
+                <Mail className="w-5 h-5 mr-2 text-orange-600" /> info@ethotron.com
+              </p>
+
+              <div className="pt-4 border-t border-gray-200 text-xs text-gray-600 space-y-1">
+                <p><strong>Area Manager:</strong> Mr. Sunil Grover</p>
+                <p><strong>Email:</strong> sunilgrover@aimil.com</p>
+                <p><strong>State/UT Catered:</strong> Delhi & NCR, Haryana (except Ambala & Panchkula), Rajasthan, Uttar Pradesh, Uttarakhand</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Right Image */}
-      <img
-        src={R} // Replace with your actual image path
-        alt="Building Right"
-        className="w-full md:w-1/4 object-cover rounded-md shadow"
-      />
+        {/* Right Image */}
+        <div className="w-full md:w-1/4 ">
+          <img
+            src={Left}
+            alt="Building Right"
+            className="rounded-xl shadow-lg object-cover w-full h-full"
+          />
+        </div>
+      </div>
     </div>
   );
 };
