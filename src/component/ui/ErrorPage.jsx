@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import Error from '../../assets/New folder/error.png'
 
 const ErrorPage = () => {
   const navigate = useNavigate();
@@ -9,9 +10,9 @@ const ErrorPage = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 text-center">
       {/* AI Generated Image Placeholder */}
       <img
-        src="https://via.placeholder.com/400x300?text=AI+Generated+Error+Image"
+        src={Error}
         alt="Error Illustration"
-        className="mb-8 rounded shadow-lg"
+        className="mb-8 rounded shadow-lg h-[60vh]"
       />
 
       <h1 className="text-4xl font-bold text-red-600 mb-4">Oops! Page not found</h1>
