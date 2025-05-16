@@ -2,6 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Banner1 from '../../assets/Banner/banner1.jpg'
 import Banner2 from '../../assets/Banner/banner2.jpg'
+import Banner3 from '../../assets/Banner/banner3.jpg'
+import Banner4 from '../../assets/Banner/banner4.jpg'
 
 const slides = [
   {
@@ -11,10 +13,10 @@ const slides = [
     image: Banner2,
   },
   {
-    image: Banner1,
+    image: Banner3,
   },
   {
-    image: Banner2,
+    image: Banner4,
   },
 ];
 const HeroSection = () => {
