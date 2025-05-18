@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Banner1 from '../../assets/Banner/banner1.jpg';
-import Banner2 from '../../assets/Banner/banner2.jpg';
-import Banner3 from '../../assets/Banner/banner3.jpg';
-import Banner4 from '../../assets/Banner/banner4.jpg';
-import mobileDevice from '../../assets/Banner/mobileDevice.png'
+import React, { useState, useEffect } from "react";
+import Banner1 from "../../assets/Banner/banner1.jpg";
+import Banner2 from "../../assets/Banner/banner2.jpg";
+import Banner3 from "../../assets/Banner/banner3.jpg";
+import Banner4 from "../../assets/Banner/banner4.jpg";
+// import mobileDevice from '../../assets/Banner/mobileDevice.png'
 
 // Separate slides for desktop and mobile (replace with real mobile banners if available)
 const desktopSlides = [
@@ -30,8 +30,8 @@ const HeroSection = () => {
     };
 
     handleResize(); // Set initial value
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const HeroSection = () => {
           <div
             key={idx}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              idx === current ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
             <section
@@ -61,7 +61,7 @@ const HeroSection = () => {
                 backgroundImage: `url(${slide.image})`,
               }}
             >
-              {/* Add any overlay content here if needed */}
+              
             </section>
           </div>
         ))}
@@ -73,7 +73,7 @@ const HeroSection = () => {
               key={idx}
               onClick={() => setCurrent(idx)}
               className={`h-2 w-2 rounded-full cursor-pointer ${
-                idx === current ? 'bg-white' : 'bg-gray-400'
+                idx === current ? "bg-white" : "bg-gray-400"
               }`}
             ></span>
           ))}
@@ -88,23 +88,27 @@ const HeroSection = () => {
             Welcome to Ethotron Pvt. Ltd.
           </h2>
           <p className="text-gray-700 font-medium">
-            Your One-Stop Partner for Automation, Testing, and Precision Engineering
+            Your One-Stop Partner for Automation, Testing, and Precision
+            Engineering
           </p>
           <p className="text-gray-700">
-            With over 18 years of industry expertise, Ethotron Pvt. Ltd. is a leading provider of
-            high-tech solutions for the electronics and manufacturing sectors. From SMT and testing
-            instruments to custom-built automation systems and turnkey projects, we deliver innovation
-            with reliability.
+            With over 18 years of industry expertise, Ethotron Pvt. Ltd. is a
+            leading provider of high-tech solutions for the electronics and
+            manufacturing sectors. From SMT and testing instruments to
+            custom-built automation systems and turnkey projects, we deliver
+            innovation with reliability.
           </p>
           <p className="text-gray-700">
-            We offer a comprehensive range of products and services under one roof—including Testing Instruments,
-            FCT Fixtures, SMT Consumables, ESD Products, SPM Machines, and Automation Solutions—designed to meet
-            the evolving needs of modern manufacturing.
+            We offer a comprehensive range of products and services under one
+            roof—including Testing Instruments, FCT Fixtures, SMT Consumables,
+            ESD Products, SPM Machines, and Automation Solutions—designed to
+            meet the evolving needs of modern manufacturing.
           </p>
           <p className="text-gray-700">
-            Driven by a skilled team and a passion for engineering excellence, Ethotron combines deep industry
-            knowledge with cutting-edge technology to empower your production with precision, efficiency, and
-            performance.
+            Driven by a skilled team and a passion for engineering excellence,
+            Ethotron combines deep industry knowledge with cutting-edge
+            technology to empower your production with precision, efficiency,
+            and performance.
           </p>
           <p className="font-medium text-blue-700">
             Let’s build smarter, faster, and more reliable systems—together.
@@ -113,7 +117,9 @@ const HeroSection = () => {
 
         {/* Right Column */}
         <div className="space-y-4">
-          <p className="text-lg font-semibold text-gray-800">ETHOTRON UPDATES: Running Banner</p>
+          <p className="text-lg font-semibold text-gray-800">
+            ETHOTRON UPDATES: Running Banner
+          </p>
           <img
             src="/your-image-path.png" // Replace with actual image path
             alt="AMETEK Partnership"
