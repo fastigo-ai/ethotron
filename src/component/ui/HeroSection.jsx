@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 import Banner1 from "../../assets/Banner/banner1.jpg";
 import Banner2 from "../../assets/Banner/banner2.jpg";
 import Banner3 from "../../assets/Banner/banner3.jpg";
 import Banner4 from "../../assets/Banner/banner4.jpg";
 // import mobileDevice from '../../assets/Banner/mobileDevice.png'
 
-// Separate slides for desktop and mobile (replace with real mobile banners if available)
+// Separate slides for desktop and mobile 
 const desktopSlides = [
   { image: Banner1 },
   { image: Banner2 },
@@ -29,7 +30,7 @@ const HeroSection = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); // Set initial value
+    handleResize(); 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
