@@ -1,97 +1,84 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import Banner1 from '../../assets/Banner/banner1.jpg'
-import Banner2 from '../../assets/Banner/banner2.jpg'
-import Banner3 from '../../assets/Banner/banner3.jpg'
-import Banner4 from '../../assets/Banner/banner4.jpg'
+import React, { useState, useEffect } from 'react';
+import Banner1 from '../../assets/Banner/banner1.jpg';
+import Banner2 from '../../assets/Banner/banner2.jpg';
+import Banner3 from '../../assets/Banner/banner3.jpg';
+import Banner4 from '../../assets/Banner/banner4.jpg';
+import mobileDevice from '../../assets/Banner/mobileDevice.png'
 
-const slides = [
-  {
-    image: Banner1,
-  },
-  {
-    image: Banner2,
-  },
-  {
-    image: Banner3,
-  },
-  {
-    image: Banner4,
-  },
+// Separate slides for desktop and mobile (replace with real mobile banners if available)
+const desktopSlides = [
+  { image: Banner1 },
+  { image: Banner2 },
+  { image: Banner3 },
+  { image: Banner4 },
 ];
+
+const mobileSlides = [
+  { image: Banner1 },
+  { image: Banner2 },
+  { image: Banner3 },
+  { image: Banner4 },
+];
+
 const HeroSection = () => {
- const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 5000); // Change slide every 5 seconds
+      setCurrent((prev) => (prev === activeSlides.length - 1 ? 0 : prev + 1));
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isMobile]);
 
-  // const nextSlide = () => {
-  //   setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  // };
-
-  // const prevSlide = () => {
-  //   setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  // };
+  const activeSlides = isMobile ? mobileSlides : desktopSlides;
 
   return (
     <>
-    <div className="relative h-[90vh] overflow-hidden">
-      {slides.map((slide, idx) => (
-        <div
-          key={idx}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            idx === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
-          }`}
-        >
-          <section
-            className="h-full bg-cover bg-center flex items-center"
-            style={{
-              backgroundImage: `url(${slide.image})`,
-            }}
-          >
-            {/* <div className="absolute inset-0 bg-[#1f2937]/80"></div>
-            <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-12 text-white">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-                {slide.title}
-              </h1>
-              <p className="text-gray-300 max-w-2xl text-lg">{slide.description}</p> */}
-            {/* </div> */}
-          </section>
-        </div>
-      ))}
-
-      {/* Controls */}
-      {/* <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full z-20"
-      >
-        &#8592;
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full z-20"
-      >
-        &#8594;
-      </button> */}
-
-      {/* Indicators */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
-        {slides.map((_, idx) => (
-          <span
+      {/* Banner Slideshow */}
+      <div className="relative h-[60vh] md:h-[75vh] lg:h-[90vh] overflow-hidden">
+        {activeSlides.map((slide, idx) => (
+          <div
             key={idx}
-            onClick={() => setCurrent(idx)}
-            className={`h-2 w-2 rounded-full cursor-pointer ${
-              idx === current ? 'bg-white' : 'bg-gray-400'
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
             }`}
-          ></span>
+          >
+            <section
+              className="h-full bg-cover bg-top md:bg-center flex items-center"
+              style={{
+                backgroundImage: `url(${slide.image})`,
+              }}
+            >
+              {/* Add any overlay content here if needed */}
+            </section>
+          </div>
         ))}
+
+        {/* Indicators */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
+          {activeSlides.map((_, idx) => (
+            <span
+              key={idx}
+              onClick={() => setCurrent(idx)}
+              className={`h-2 w-2 rounded-full cursor-pointer ${
+                idx === current ? 'bg-white' : 'bg-gray-400'
+              }`}
+            ></span>
+          ))}
+        </div>
       </div>
-    </div>
 
       {/* Content Grid */}
       <div className="max-w-7xl mx-auto px-4 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">

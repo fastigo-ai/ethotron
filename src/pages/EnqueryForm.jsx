@@ -16,7 +16,7 @@ const EnqueryForm = () => {
     }
 
     const formData = new FormData();
-    formData.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY');
+    formData.append('access_key', 'fda635c8-fa6e-4cfe-a139-14b5a85bfac0');
     formData.append('subject', 'New Enquiry Form Submission');
     formData.append('Full Name', data.fullName);
     formData.append('Company Name', data.company);
