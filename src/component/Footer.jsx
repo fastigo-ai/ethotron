@@ -1,268 +1,67 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import {
-  FaInstagram,
-  FaFacebookF,
-  FaWhatsapp,
-  FaLinkedinIn,
-} from "react-icons/fa";
 
+import React from 'react';
+import { FaPhoneAlt, FaWhatsapp, FaEnvelope, FaYoutube, FaLinkedin } from 'react-icons/fa';
+import Logo from '../assets/logo/logo1.jpg'
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-tr from-orange-400 to-yellow-300 text-gray-900 pt-10 mt-6 shadow-inner relative">
-      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        {/* Contact CTA */}
-        <div className="bg-black text-center mb-6 p-4 rounded-md shadow-sm">
-          <h2 className="text-2xl font-bold text-white">
-            Get in touch with our experts,&nbsp;
-            <a
-              href="tel:+91-9997547656"
-              className="underline text-white hover:text-orange-400 transition"
-            >
-              Call +91-9997547656
-            </a>
-            &nbsp;or&nbsp;
-            <a
-              href="info@ethotron.com"
-              className="underline text-white hover:text-orange-400 transition"
-            >
-              Write to us
-            </a>
-          </h2>
+    <footer className="bg-gray-100 text-gray-800 py-10 px-6 lg:px-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
+
+        {/* Logo and Socials */}
+        <div>
+          <img src={Logo} alt="ethotron" className="h-10 mb-2" />
+          <p className="font-semibold mb-4">INDIA PVT. LTD.</p>
+          
         </div>
 
-        {/* Footer Links */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-base pb-16 text-center sm:text-left">
-          {/* Products Column */}
-          <div>
-            <h3 className="font-bold mb-3 uppercase">Products</h3>
-            <ul className="space-y-1">
-              <li>
-                <Link
-                  to="#oscilloscopes"
-                  className="hover:text-white transition"
-                >
-                  Oscilloscopes
-                </Link>
-              </li>
-              <li>
-                <Link to="#meters" className="hover:text-white transition">
-                  Meters
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#dc-power-supplies"
-                  className="hover:text-white transition"
-                >
-                  DC Power Supplies
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#electronic-loads"
-                  className="hover:text-white transition"
-                >
-                  Electronic Loads
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#emi-emc-test-solutions-for-emission"
-                  className="hover:text-white transition"
-                >
-                  EMI EMC for Emission
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#work-benches"
-                  className="hover:text-white transition"
-                >
-                  Work Benches
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#accessories"
-                  className="hover:text-white transition"
-                >
-                  Accessories
-                </Link>
-              </li>
-            </ul>
-          </div>
+        {/* Quick Links */}
+        <div>
+          <h3 className="font-semibold mb-3">Quick Links</h3>
+          <ul className="space-y-2">
+            <li><Link to='/' className="hover:text-blue-600">Home</Link></li>
+            <li><Link to='/about' className="hover:text-blue-600">About Us</Link></li>
+            <li><Link to='/' className="hover:text-blue-600">Our Principals</Link></li>
+            <li><Link to='/' className="hover:text-blue-600">Coolit</Link></li>
+          </ul>
+        </div>
 
-          {/* More Products */}
-          <div>
-            <ul className="space-y-1 mt-6 sm:mt-0">
-              <li>
-                <Link
-                  to="#generators"
-                  className="hover:text-white transition"
-                >
-                  Generators
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#analyzers"
-                  className="hover:text-white transition"
-                >
-                  Analyzers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#ac-power-supplies"
-                  className="hover:text-white transition"
-                >
-                  AC Power Supplies
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#safety-testers"
-                  className="hover:text-white transition"
-                >
-                  Safety Testers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#emi-emc-test-solutions-for-immunity"
-                  className="hover:text-white transition"
-                >
-                  EMI EMC for Immunity
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#power-amplifier"
-                  className="hover:text-white transition"
-                >
-                  Power Amplifier
-                </Link>
-              </li>
-            </ul>
-          </div>
+        {/* Address */}
+        <div>
+          <h3 className="font-semibold mb-1">Address</h3>
+          <p className="mb-3">
+            <strong>Corporate Office:</strong><br />
+            AHS-514, 5th Floor,<br />
+            Aditya High Street, South Side GT Road Industrial Area, Lal Kuan,
+            Ghaziabad - (201009)
+          </p>
+          
+        </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-bold mb-3 uppercase">Quick Links</h3>
-            <ul className="space-y-1">
-              <li>
-                <Link to="/home" className="hover:text-white transition">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/solutions"
-                  className="hover:text-white transition"
-                >
-                  Solutions
-                </Link>
-              </li>
-              <li>
-                <Link to="/events" className="hover:text-white transition">
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link to="/career" className="hover:text-white transition">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/sitemap"
-                  className="hover:text-white transition"
-                >
-                  Sitemap
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Support & Company */}
-          <div>
-            <ul className="space-y-1 mt-6 lg:mt-0">
-              <li>
-                <Link
-                  to="/service-&-support"
-                  className="hover:text-white transition"
-                >
-                  Service & Support
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="hover:text-white transition">
-                  Company
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="hover:text-white transition"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-            <div className="absolute mt-6 flex md:items-center space-x-3">
-              <Link
-                to="https://www.instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-pink-600 transition"
-              >
-                <FaInstagram size={24} />
-              </Link>
-              <Link
-                to="https://wa.me/9100000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-green-600 transition"
-              >
-                <FaWhatsapp size={24} />
-              </Link>
-              <Link
-                to="https://www.facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-blue-700 transition"
-              >
-                <FaFacebookF size={24} />
-              </Link>
-              <Link
-                to="https://www.linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-blue-500 transition"
-              >
-                <FaLinkedinIn size={24} />
-              </Link>
-            </div>
-          </div>
+        {/* Contact */}
+        <div>
+          <h3 className="font-semibold mb-3">Contact Details</h3>
+          <ul className="space-y-3">
+            <li className="flex items-center space-x-2">
+              <FaPhoneAlt className="text-blue-600" />
+              <span>+91-9997547656</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <FaWhatsapp className="text-blue-600" />
+              <span>+91-9997547656</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <FaEnvelope className="text-blue-600" />
+              <span>info@ethotron.com</span>
+            </li>
+          </ul>
         </div>
       </div>
 
-      {/* Social Icons Bottom Right */}
-      {/* <div className="absolute bottom-4 right-6 flex space-x-3">
-        <Link to="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-pink-600 transition">
-          <FaInstagram size={20} />
-        </Link>
-        <Link to="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-green-600 transition">
-          <FaWhatsapp size={20} />
-        </Link>
-        <Link to="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-700 transition">
-          <FaFacebookF size={20} />
-        </Link>
-        <Link to="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-500 transition">
-          <FaLinkedinIn size={20} />
-        </Link>
-      </div> */}
+      <div className="text-center text-xs mt-10 text-gray-500">
+        <p>Copyright © 2025 ethotron.com</p>
+        <p className="mt-1">Powered by ethotron.com</p>
+      </div>
     </footer>
   );
 };

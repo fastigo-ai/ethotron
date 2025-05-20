@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 const Vision = () => {
   const Details = [
     {
@@ -23,15 +23,23 @@ const Vision = () => {
   ];
   return (
     <div>
-      <div className="flex flex-wrap gap-6 justify-center mt-6">
-        {Details.map((id) => (
-          <div
-            key={id.id}
-            className="bg-white transition duration-300 cursor-pointer hover:bg-blue-100 w-full sm:w-[300px] p-6 rounded-xl shadow hover:shadow-xl "
+      <div className="flex flex-wrap gap-6 justify-center mt-6 mb-6">
+        {Details.map((item, index) => (
+          <motion.div
+            key={index}
+            className="bg-white hover:bg-blue-100 p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 cursor-pointer w-full sm:w-[300px]"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.3,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold mb-2">{id.title}</h3>
-            <p className="text-sm text-gray-600 mb-4">{id.description}</p>
-          </div>
+            <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+            <p className="text-sm text-gray-600 mb-4">{item.description}</p>
+          </motion.div>
         ))}
       </div>
     </div>

@@ -38,11 +38,7 @@ const Contact = () => {
                 <Mail className="w-5 h-5 mr-2 text-orange-600" /> info@ethotron.com
               </p>
 
-              <div className="pt-4 border-t border-gray-200 text-xs text-gray-600 space-y-1">
-                <p><strong>Area Manager:</strong> Mr. Sunil Grover</p>
-                <p><strong>Email:</strong> sunilgrover@aimil.com</p>
-                <p><strong>State/UT Catered:</strong> Delhi & NCR, Haryana (except Ambala & Panchkula), Rajasthan, Uttar Pradesh, Uttarakhand</p>
-              </div>
+              
             </div>
           </div>
         </div>
