@@ -53,68 +53,72 @@ const About = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-10">
           <div className="w-full">
             <div className="relative bg-white text-black rounded-2xl shadow-2xl p-8">
-                 <motion.div
-                        className="mt-16 max-w-4xl mx-auto"
-                        initial={{ opacity: 0, y: 60 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.9, delay: 0.3 }}
-                        viewport={{ once: true }}
-                      >
-              {/* Float image on right for large screens */}
-              <img
-                src="/path-to-your-image/about-section-image.png"
-                alt="About Ethotron"
-                className="w-full lg:w-72 h-auto object-cover rounded-xl lg:absolute right-8 top-8 lg:top-0 lg:bottom-0 lg:my-auto"
-              />
+             <motion.div
+  className="mt-16 max-w-4xl mx-auto"
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.9, delay: 0.3 }}
+  viewport={{ once: true }}
+>
+  <img
+    src="/path-to-your-image/about-section-image.png"
+    alt="About Ethotron"
+    className="w-full lg:w-72 h-auto object-cover rounded-xl lg:absolute right-8 top-8 lg:top-0 lg:bottom-0 lg:my-auto"
+  />
 
-              <h2 className="text-4xl font-bold mb-6 leading-tight">
-                Innovation. Reliability. Integration.
-              </h2>
-              <p className="text-sm md:text-base leading-relaxed">
-                Founded by industry experts with over 20 years of experience,{" "}
-                <strong>Ethotron Pvt. Ltd.</strong> is a trusted name in the
-                field of Surface Mount Technology (SMT), Testing & Measuring
-                Instruments, and Industrial Automation Solutions. We specialize
-                in delivering comprehensive, end-to-end solutions—from pre-sales
-                consultation to post-sales service and complete turnkey project
-                execution.
-                <br />
-                <br />
-                At Ethotron, we go beyond just supplying testing equipment. We
-                build long-term partnerships by offering a broad portfolio of
-                cutting-edge solutions under one roof, including:
-                <ul className="list-disc list-inside mt-3 ml-4">
-                  <li>Testing/Measuring Instruments & FCT Fixtures</li>
-                  <li>SMT Consumables & Spare Parts</li>
-                  <li>ESD Products & Equipment</li>
-                  <li>Special Purpose Machines (SPMs)</li>
-                  <li>Material Handling Systems & Conveyor Lines</li>
-                  <li>Hydraulic and Pneumatic Presses</li>
-                  <li>
-                    Custom Automation for Manufacturing & Testing Processes
-                  </li>
-                </ul>
-                <br />
-                Our in-house team excels in the design and development of
-                automation systems, precision jigs and fixtures, digital
-                displays, calibration stations, and more. We support industries
-                such as electronics, electricals, appliance manufacturing, and
-                industrial engineering with tailored solutions that match unique
-                operational needs.
-                <br />
-                <br />
-                Ethotron thrives in a high-mix, low-volume manufacturing
-                environment and embraces the challenges of global competition.
-                By blending domain expertise with smart use of technology and
-                e-commerce, we deliver flexible, scalable, and value-driven
-                solutions to customers across India and beyond.
-                <br />
-                <br />
-                Our mission: to empower manufacturers with innovative testing
-                solutions, intelligent automation, and unwavering support.
-              </p>
-              
-              </motion.div>
+  <h2 className="text-4xl font-bold mb-6 leading-tight">
+    Innovation. Reliability. Integration.
+  </h2>
+
+  <div className="text-sm md:text-base leading-relaxed space-y-4">
+    <p>
+      Founded by industry experts with over 20 years of experience,{" "}
+      <strong>Ethotron Pvt. Ltd.</strong> is a trusted name in the field of
+      Surface Mount Technology (SMT), Testing & Measuring Instruments, and
+      Industrial Automation Solutions. We specialize in delivering
+      comprehensive, end-to-end solutions—from pre-sales consultation to
+      post-sales service and complete turnkey project execution.
+    </p>
+
+    <p>
+      At Ethotron, we go beyond just supplying testing equipment. We build
+      long-term partnerships by offering a broad portfolio of cutting-edge
+      solutions under one roof, including:
+    </p>
+
+    <ul className="list-disc list-inside mt-3 ml-4">
+      <li>Testing/Measuring Instruments & FCT Fixtures</li>
+      <li>SMT Consumables & Spare Parts</li>
+      <li>ESD Products & Equipment</li>
+      <li>Special Purpose Machines (SPMs)</li>
+      <li>Material Handling Systems & Conveyor Lines</li>
+      <li>Hydraulic and Pneumatic Presses</li>
+      <li>Custom Automation for Manufacturing & Testing Processes</li>
+    </ul>
+
+    <p>
+      Our in-house team excels in the design and development of automation
+      systems, precision jigs and fixtures, digital displays, calibration
+      stations, and more. We support industries such as electronics,
+      electricals, appliance manufacturing, and industrial engineering with
+      tailored solutions that match unique operational needs.
+    </p>
+
+    <p>
+      Ethotron thrives in a high-mix, low-volume manufacturing environment and
+      embraces the challenges of global competition. By blending domain
+      expertise with smart use of technology and e-commerce, we deliver
+      flexible, scalable, and value-driven solutions to customers across India
+      and beyond.
+    </p>
+
+    <p>
+      Our mission: to empower manufacturers with innovative testing solutions,
+      intelligent automation, and unwavering support.
+    </p>
+  </div>
+</motion.div>
+
             </div>
           </div>
         </div>
@@ -122,25 +126,24 @@ const About = () => {
 
       {/* Vision / Value Cards */}
       <div className="flex flex-wrap justify-center gap-6 px-6 py-10">
-  {DetailsAbout.map((item, index) => (
-    <motion.div
-      key={item.id}
-      className="bg-white w-full sm:w-[300px] p-6 rounded-xl shadow hover:shadow-xl hover:bg-blue-50 transition-all duration-300"
-      initial={{ opacity: 0, y: 100 }} // more from bottom
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{
-        duration: 0.8,
-        delay: index * 0.3, // more dramatic delay
-        ease: "easeOut",
-      }}
-    >
-      <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-      <p className="text-sm text-gray-700">{item.description}</p>
-    </motion.div>
-  ))}
-</div>
-
+        {DetailsAbout.map((item, index) => (
+          <motion.div
+            key={item.id}
+            className="bg-white w-full sm:w-[300px] p-6 rounded-xl shadow hover:shadow-xl hover:bg-blue-50 transition-all duration-300"
+            initial={{ opacity: 0, y: 100 }} // more from bottom
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.3, // more dramatic delay
+              ease: "easeOut",
+            }}
+          >
+            <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+            <p className="text-sm text-gray-700">{item.description}</p>
+          </motion.div>
+        ))}
+      </div>
 
       {/* Industries Served */}
       <section className="px-6 py-12 bg-white">
@@ -150,28 +153,30 @@ const About = () => {
         <p className="text-center text-gray-600 mb-10">Industries we serve:</p>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
-  {industries.map((item, index) => (
-    <motion.div
-      key={index}
-      className="bg-white shadow-md rounded-md flex flex-col items-center p-4 w-full h-38 hover:bg-blue-100 hover:shadow-xl transition duration-300 cursor-pointer"
-      initial={{ opacity: 0, y: 120 }} // float from farther down
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{
-        duration: 0.9,
-        delay: index * 0.1, // slightly staggered
-        ease: "easeOut",
-      }}
-    >
-      <img
-        src={item.icon}
-        alt={item.title}
-        className="h-12 mb-2 object-contain"
-      />
-      <p className="text-center font-medium text-gray-800">{item.title}</p>
-    </motion.div>
-  ))}
-</div>
+          {industries.map((item, index) => (
+            <motion.div
+              key={index}
+              className="bg-white shadow-md rounded-md flex flex-col items-center p-4 w-full h-38 hover:bg-blue-100 hover:shadow-xl transition duration-300 cursor-pointer"
+              initial={{ opacity: 0, y: 120 }} // float from farther down
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.9,
+                delay: index * 0.1, // slightly staggered
+                ease: "easeOut",
+              }}
+            >
+              <img
+                src={item.icon}
+                alt={item.title}
+                className="h-12 mb-2 object-contain"
+              />
+              <p className="text-center font-medium text-gray-800">
+                {item.title}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </section>
     </>
   );
