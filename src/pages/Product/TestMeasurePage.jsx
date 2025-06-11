@@ -1,49 +1,49 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Banner1 from "../../assets/Banner/banner1.jpg";
-import Banner2 from "../../assets/Banner/banner2.jpg";
-import Banner3 from "../../assets/Banner/banner3.jpg";
-import Banner4 from "../../assets/Banner/banner4.jpg";
+// import Banner1 from "../../assets/Banner/banner1.jpg";
+// import Banner2 from "../../assets/Banner/banner2.jpg";
+// import Banner3 from "../../assets/Banner/banner3.jpg";
+// import Banner4 from "../../assets/Banner/banner4.jpg";
 import { Products } from '../../Data/productsData';
 import { useNavigate } from "react-router-dom";
 
-const desktopSlides = [
-  { image: Banner1 },
-  { image: Banner2 },
-  { image: Banner3 },
-  { image: Banner4 },
-];
+// const desktopSlides = [
+//   { image: Banner1 },
+//   { image: Banner2 },
+//   { image: Banner3 },
+//   { image: Banner4 },
+// ];
 
-const mobileSlides = [
-  { image: Banner1 },
-  { image: Banner2 },
-  { image: Banner3 },
-  { image: Banner4 },
-];
+// const mobileSlides = [
+//   { image: Banner1 },
+//   { image: Banner2 },
+//   { image: Banner3 },
+//   { image: Banner4 },
+// ];
 
 const TestMeasurePage = () => {
-  const [current, setCurrent] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  // const [current, setCurrent] = useState(0);
+  // const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsMobile(window.innerWidth < 768);
+  //   };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev === activeSlides.length - 1 ? 0 : prev + 1));
-    }, 5000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrent((prev) => (prev === activeSlides.length - 1 ? 0 : prev + 1));
+  //   }, 5000);
 
-    return () => clearInterval(interval);
-  }, [isMobile]);
+  //   return () => clearInterval(interval);
+  // }, [isMobile]);
 
-  const activeSlides = isMobile ? mobileSlides : desktopSlides;
+  // const activeSlides = isMobile ? mobileSlides : desktopSlides;
 
  const navigate = useNavigate()
   const handleclick = ()=>{
@@ -52,36 +52,7 @@ const TestMeasurePage = () => {
   return (
     <div>
       {/* Banner Slideshow */}
-      <div className="relative h-[40vh] md:h-[35vh] lg:h-[40vh] overflow-hidden">
-        {activeSlides.map((slide, idx) => (
-          <div
-            key={idx}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === current ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
-          >
-            <section
-              className="h-[40vh] bg-cover bg-top md:bg-center flex items-center"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
-            ></section>
-          </div>
-        ))}
-
-        {/* Indicators */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
-          {activeSlides.map((_, idx) => (
-            <span
-              key={idx}
-              onClick={() => setCurrent(idx)}
-              className={`h-2 w-2 rounded-full cursor-pointer ${
-                idx === current ? "bg-white" : "bg-gray-400"
-              }`}
-            ></span>
-          ))}
-        </div>
-      </div>
+      
 
       <section className="py-20 px-6 lg:px-20 text-gray-800">
         <div className="max-w-7xl mx-auto">

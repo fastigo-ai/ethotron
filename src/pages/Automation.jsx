@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Banner from "../assets/Banner/banner13.jpg";
+import Banner1 from "../assets/Banner/aaa.jpg";
 
 const capabilities = [
   {
@@ -53,8 +55,23 @@ These lines are built to maximize space utilization, improve ergonomics, and sup
 
 const Automation = () => {
   return (
-    <section className="bg-gray-50 px-6 py-16">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-gray-50 ">
+      <div className="w-full relative">
+        {/* Mobile Banner */}
+        <img
+          src={Banner1}
+          alt="Mobile Banner"
+          className="block md:hidden w-full h-[200px] object-fill"
+        />
+        {/* Desktop Banner */}
+        <img
+          src={Banner}
+          alt="Desktop Banner"
+          className="hidden md:block w-full h-[500px] object-cover"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 py-16">
         <motion.h2
           className="text-4xl font-bold text-gray-800 text-center mb-4"
           initial={{ opacity: 0, y: 60 }}

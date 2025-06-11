@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import emcProducts from '../../Data/emcProducts'
-
+import { useNavigate } from "react-router-dom";
 const EMCPage = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   const toggleExpand = (index) => {
     setExpandedIndex(prev => (prev === index ? null : index));
   };
+
+   const navigate = useNavigate()
+  const handleclick = ()=>{
+    navigate('/enquery-form');
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
@@ -32,6 +37,13 @@ const EMCPage = () => {
             >
               {expandedIndex === index ? 'See less' : 'See more'}
             </button>
+            <br />
+            <button
+                  className="bg-blue-600 text-white px-6 py-2 rounded-full text-sm hover:bg-blue-700 cursor-pointer mt-2"
+                  onClick={handleclick}
+                >
+                  Enquiry
+                </button>
           </div>
         ))}
       </div>

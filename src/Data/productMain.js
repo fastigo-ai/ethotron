@@ -17,7 +17,7 @@ const productCategories = [
   {
     title: "EMC / EMI Testing Solution",
     link: "/products/emc-emi-testing",
-    items: [],
+    items: ["Surge, EFT, DIPS & MF Generator","ESD GUN & EMC analysers"],
     image1: Image3, 
     image2: Image4, 
      
@@ -25,7 +25,7 @@ const productCategories = [
   {
     title: "Test & Measuring Solution",
     link: "/products/test-measuring",
-    items: [],
+    items: ["AC, DC Power Source & Electronic Loads","Battery Simulator & power analysers"],
     image1: Image5, 
     image2: Image6, 
      

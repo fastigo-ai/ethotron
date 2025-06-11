@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaBars } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Logo from "../assets/logo/logo1.jpg";
+import Logo from "../assets/logo/logo2.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <header className="w-full">
       {/* Fixed Navbar */}
-      <div className="fixed top-0 left-0 w-full bg-white shadow z-50">
+      <div className="fixed top-0 left-0 w-full bg-amber-200 shadow-gray-300 border z-50">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-4 flex justify-between items-center">
           {/* Logo and Tagline */}
           <div className="flex flex-col items-start leading-tight">
@@ -22,7 +22,7 @@ const Navbar = () => {
               <img
                 src={Logo}
                 alt="Ethotron Logo"
-                className="w-46 h-auto object-contain"
+                className="w-46  h-auto object-contain"
               />
             </Link>
           </div>

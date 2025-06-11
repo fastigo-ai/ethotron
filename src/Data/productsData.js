@@ -35,8 +35,8 @@ export const Products = [
   },
   {
     id: 5,
-    title: "Power Setup up to 1200kW",
-    description: "Type: Customized Rack Configuration (CV, CC, CP modes)\nFeatures: Battery cycling, EVSE testing, bidirectional load, parallel expansion",
+    title: "Battery Simulator",
+    description: "Power Setup up to 1200kW\nType: Customized Rack Configuration (CV, CC, CP modes)\nFeatures: Battery cycling, EVSE testing, bidirectional load, parallel expansion",
     icon: image5
   },
   {

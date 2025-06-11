@@ -1,12 +1,13 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import Banner1 from "../../assets/Banner/banner1.jpg";
-import Banner2 from "../../assets/Banner/banner2.jpg";
+import React, { useState, useEffect, useRef } from "react";
+import Banner1 from "../../assets/Banner/6.png";
+import Banner2 from "../../assets/Banner/banner14.jpg";
 import Banner3 from "../../assets/Banner/banner3.jpg";
 import Banner4 from "../../assets/Banner/banner4.jpg";
-// import mobileDevice from '../../assets/Banner/mobileDevice.png'
+import Banner6 from "../../assets/adverticment/Ad1Banner.png";
+import Banner5 from "../../assets/adverticment/2.png";
+import Banner7 from "../../assets/adverticment/1.png";
+import Banner8 from "../../assets/adverticment/4.png";
 
-// Separate slides for desktop and mobile 
 const desktopSlides = [
   { image: Banner1 },
   { image: Banner2 },
@@ -15,14 +16,15 @@ const desktopSlides = [
 ];
 
 const mobileSlides = [
-  { image: Banner1 },
-  { image: Banner2 },
-  { image: Banner3 },
-  { image: Banner4 },
+  { image: Banner5 },
+  { image: Banner6 },
+  { image: Banner7 },
+  { image: Banner8 },
 ];
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
+  const [currentProduct, setCurrentProduct] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -30,25 +32,31 @@ const HeroSection = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const activeSlides = isMobile ? mobileSlides : desktopSlides;
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev === activeSlides.length - 1 ? 0 : prev + 1));
-    }, 5000);
-
+    }, 3000);
     return () => clearInterval(interval);
   }, [isMobile]);
 
-  const activeSlides = isMobile ? mobileSlides : desktopSlides;
+  useEffect(() => {
+    const productInterval = setInterval(() => {
+      setCurrentProduct((prev) => (prev === 3 ? 0 : prev + 1));
+    }, 3000);
+    return () => clearInterval(productInterval);
+  }, []);
 
   return (
     <>
-      {/* Banner Slideshow */}
-      <div className="relative h-[60vh] md:h-[75vh] lg:h-[90vh] overflow-hidden">
+      {/* Top Slideshow */}
+      <div className="relative h-[40vh] sm:h-[35vh] md:h-[40vh] lg:h-[60vh] overflow-hidden">
         {activeSlides.map((slide, idx) => (
           <div
             key={idx}
@@ -57,13 +65,12 @@ const HeroSection = () => {
             }`}
           >
             <section
-              className="h-full bg-cover bg-top md:bg-center flex items-center"
+              className="h-full w-full bg-center bg-no-repeat flex items-center"
               style={{
                 backgroundImage: `url(${slide.image})`,
+                backgroundSize: "100% 100%", // Mimics object-fill
               }}
-            >
-              
-            </section>
+            ></section>
           </div>
         ))}
 
@@ -73,63 +80,95 @@ const HeroSection = () => {
             <span
               key={idx}
               onClick={() => setCurrent(idx)}
-              className={`h-2 w-2 rounded-full cursor-pointer ${
+              className={`h-3 w-3 sm:h-2 sm:w-2 rounded-full cursor-pointer transition duration-300 ${
                 idx === current ? "bg-white" : "bg-gray-400"
               }`}
-            ></span>
+            />
           ))}
         </div>
       </div>
 
       {/* Content Grid */}
-      <div className="max-w-7xl mx-auto px-4 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
-        {/* Left Column */}
-        <div className="space-y-6">
-          <h2 className="text-2xl font-semibold text-gray-800">
-            Welcome to Ethotron Pvt. Ltd.
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+        {/* Left Column - Product Image Slider */}
+        <div className="relative hidden md:block h-[300px] md:h-[400px] lg:h-[450px] w-full overflow-hidden rounded-lg">
+          {[Banner5, Banner6, Banner7, Banner8].map((img, idx) => (
+            <img
+              key={idx}
+              src={img}
+              alt={`Product ${idx + 1}`}
+              className={`absolute h-full items-center border border-amber-500 shadow-amber-500 rounded-2xl object-fill transition-opacity duration-1000 ease-in-out ${
+                idx === currentProduct ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Right Column - Ethotron Company Description */}
+        <div className="space-y-4 text-gray-700">
+          <h2 className="text-3xl font-bold">
+            <span className="text-amber-500 font-bold text-3xl">
+              Welcome to
+            </span>{" "}
+            Ethotron
           </h2>
-          <p className="text-gray-700 font-medium">
-            Your One-Stop Partner for Automation, Testing, and Precision
-            Engineering
-          </p>
-          <p className="text-gray-700">
+
+          <p>
             With over 18 years of industry expertise, Ethotron Pvt. Ltd. is a
             leading provider of high-tech solutions for the electronics and
             manufacturing sectors. From SMT and testing instruments to
             custom-built automation systems and turnkey projects, we deliver
             innovation with reliability.
           </p>
-          <p className="text-gray-700">
+          <p>
             We offer a comprehensive range of products and services under one
             roof—including Testing Instruments, FCT Fixtures, SMT Consumables,
             ESD Products, SPM Machines, and Automation Solutions—designed to
             meet the evolving needs of modern manufacturing.
           </p>
-          <p className="text-gray-700">
-            Driven by a skilled team and a passion for engineering excellence,
-            Ethotron combines deep industry knowledge with cutting-edge
-            technology to empower your production with precision, efficiency,
-            and performance.
-          </p>
-          <p className="font-medium text-blue-700">
-            Let’s build smarter, faster, and more reliable systems—together.
+          <p>
+            Ethotron has a wide variety of instrumentation including AC Power
+            Sources, DC Power Supplies, DC Electronic Loads, AC Electronic
+            Loads, Digital Power Meters, LCR Meters, Hipot Testers and Automatic
+            Test Systems that are ideal for power input/output terminal tests
+            and dynamic simulation.
           </p>
         </div>
-
-        {/* Right Column */}
-        <div className="space-y-4">
-          <p className="text-lg font-semibold text-gray-800">
-            ETHOTRON UPDATES: Running Banner
-          </p>
-          <img
-            src="/your-image-path.png" // Replace with actual image path
-            alt="AMETEK Partnership"
-            className="w-full rounded shadow-md"
-          />
-          <div className="bg-blue-900 text-white p-4 text-sm font-medium rounded shadow">
-            Partnership with AMETEK Denmark A/S, Denmark
-          </div>
-        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-6">
+        <p>
+          The systems can be used to test PC/Servo/Telecom power supplies,
+          adapters, chargers, backlight inverters, LED power drivers, UPS's, PV
+          Inverters, EV chargers, and battery packs. With technical support
+          available , Ethotron can provide automated test systems and the
+          fabrication of test fixtures simultaneously at multiple locations
+          across India.
+        </p>
+        <p>
+          Ethotron is a premier supplier of EMC generators, proudly serving the
+          automotive industry and standing among the leaders in testing
+          solutions for IEC standards, telecommunications, medical devices, and
+          electronic components.
+        </p>
+        <p>
+          Our solutions are engineered to meet and exceed the most demanding
+          industry specifications. We offer the capability to tailor test
+          routines precisely to individual test standards to meet unique
+          customer requirements.
+        </p>
+        <p>
+          Ethotron systems are designed with user experience in mind—delivering
+          intuitive, easy-to-operate software, highly sophisticated test
+          routines, and cutting-edge technology. Our EMC generators are known
+          for their exceptional reliability and consistent performance in the
+          most rigorous testing environments.
+        </p>
+        <p>
+          Driven by a skilled team and a passion for engineering excellence,
+          Ethotron combines deep industry knowledge with cutting-edge technology
+          to empower your production with precision, efficiency, and
+          performance.
+        </p>
       </div>
     </>
   );

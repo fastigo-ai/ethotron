@@ -19,21 +19,21 @@ const imageCards = [
       "We operate from a modern, fully-equipped manufacturing facility that supports the design, fabrication, and assembly of advanced test jigs, automation solutions, and SPM machines. Our infrastructure allows us to maintain exceptional quality standards while ensuring efficient delivery timelines.",
   },
   {
-  image: Image3,
-  title: "Expert Engineering Team",
-  description: `Our dedicated team of experienced engineers specializes in:
+    image: Image3,
+    title: "Expert Engineering Team",
+    description: `Our dedicated team of experienced engineers specializes in:
 
 • Functional Test Jig development
 • Pin fixture design and fabrication
 • System debugging and technical support`,
-}
+  },
 ];
 
 const AutomationPage = () => {
   return (
     <section className="bg-gray-50 text-gray-800 px-6 py-16">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-12">
+        <h1 className="text-4xl font-bold  mb-12">
           Functional Test Jigs, Automation & SPM Solutions
         </h1>
 
@@ -61,24 +61,24 @@ const AutomationPage = () => {
 
         {/* Remaining Sections */}
         <div className="space-y-10 max-w-4xl mx-auto p-4">
-      <Section
-        title="Ethotron"
-        text="Ethotron is a trusted name and leading manufacturer and supplier of Functional Test Jigs, Automation Systems, and Special Purpose Machines (SPMs). With a strong presence in the industry, we deliver reliable, high-quality solutions tailored to meet the evolving needs of our clients across diverse sectors."
-      />
-      <Section
-        title="State-of-the-Art Infrastructure"
-        text="We operate from a modern, fully-equipped manufacturing facility that supports the design, fabrication, and assembly of advanced test jigs, automation solutions, and SPM machines. Our infrastructure allows us to maintain exceptional quality standards while ensuring efficient delivery timelines."
-      />
-      <Section
-        title="Expert Engineering Team"
-        text={`Our dedicated team of experienced engineers specializes in:
+          <Section
+            title="Ethotron"
+            text="Ethotron is a trusted name and leading manufacturer and supplier of Functional Test Jigs, Automation Systems, and Special Purpose Machines (SPMs). With a strong presence in the industry, we deliver reliable, high-quality solutions tailored to meet the evolving needs of our clients across diverse sectors."
+          />
+          <Section
+            title="State-of-the-Art Infrastructure"
+            text="We operate from a modern, fully-equipped manufacturing facility that supports the design, fabrication, and assembly of advanced test jigs, automation solutions, and SPM machines. Our infrastructure allows us to maintain exceptional quality standards while ensuring efficient delivery timelines."
+          />
+          <Section
+            title="Expert Engineering Team"
+            text={`Our dedicated team of experienced engineers specializes in:
 • Functional Test Jig development
 • Pin fixture design and fabrication
 • System debugging and technical support`}
-      />
-      <Section
-        title="Product Excellence"
-        text={`We are committed to delivering:
+          />
+          <Section
+            title="Product Excellence"
+            text={`We are committed to delivering:
 • 100% reliable test contacts using high-quality test probes (TPs)
 • Top-tier hardware components for durability and performance
 • Comprehensive electrical wiring solutions
@@ -88,23 +88,23 @@ Supply of internal accessories including:
 • Customized PCBA
 • Control cards
 • Embedded system solutions`}
-      />
-      <Section
-        title="Complete Turnkey Solutions"
-        text="From mechanical design and electrical integration to software development, Ethotron provides end-to-end solutions. We excel in the assembly and integration of automated functional test systems tailored to exact customer specifications."
-      />
+          />
+          <Section
+            title="Complete Turnkey Solutions"
+            text="From mechanical design and electrical integration to software development, Ethotron provides end-to-end solutions. We excel in the assembly and integration of automated functional test systems tailored to exact customer specifications."
+          />
 
-      <div>
-        <h2 className="text-2xl font-semibold mb-4">Our Services</h2>
-        <ul className="list-disc pl-6 text-gray-700 space-y-1">
-          <li>Design & Supply of New Fixtures</li>
-          <li>Upgrade & Retrofit of Existing Fixtures with new features</li>
-          <li>Annual Maintenance Contracts (AMC)</li>
-          <li>Industrial Automation Solutions</li>
-          <li>Design & Manufacturing of Special Purpose Machines (SPM)</li>
-        </ul>
-      </div>
-    </div>
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Our Services</h2>
+            <ul className="list-disc pl-6 text-gray-700 space-y-1">
+              <li>Design & Supply of New Fixtures</li>
+              <li>Upgrade & Retrofit of Existing Fixtures with new features</li>
+              <li>Annual Maintenance Contracts (AMC)</li>
+              <li>Industrial Automation Solutions</li>
+              <li>Design & Manufacturing of Special Purpose Machines (SPM)</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );
