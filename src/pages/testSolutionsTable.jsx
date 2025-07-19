@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Banner1 from "../assets/Banner/banner1.jpg";
-import Banner2 from "../assets/Banner/banner2.jpg";
+import Banner2 from "../assets/Banner/bannerr 11.png";
 import Banner3 from "../assets/Banner/banner3.jpg";
-import Banner4 from "../assets/Banner/banner4.jpg";
+import Banner4 from "../assets/Banner/Bannerr 12.png";
 import { Products } from '../Data/productsData';
 import { useNavigate } from "react-router-dom";
 

@@ -2,31 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import productCategories from "../../Data/productMain";
 import { motion } from "framer-motion";
-import Banner from "../../assets/Banner/ProductBanner.png";
+import Banner from "../../assets/Banner/bannerr 14.png";
+import Banner1 from "../../assets/Banner/banner16.png";
 import Vision from "../Vision";
-
-// const bannerImage = "/images/ethotron-banner.jpg";
-
-// const DetailsAbout = [
-//   {
-//     id: 1,
-//     title: "Our Vision",
-//     description:
-//       "To be the global leader in the field of industrial automation and testing solutions, recognized for our commitment to precision, innovation, and customer satisfaction...",
-//   },
-//   {
-//     id: 2,
-//     title: "Our Value Drive Our Vision.",
-//     description:
-//       "We build trust and excellence through every action, every solution. Integrity. Trust. Reliability. Perseverance. Responsibility...",
-//   },
-//   {
-//     id: 3,
-//     title: "Our Social Responsibility.",
-//     description:
-//       "Engineering with Purpose. Growing with Responsibility. At Ethotron, we believe that progress is meaningful only when it contributes to the well-being of people, industry, and the planet...",
-//   },
-// ];
 
 const ProductMain = () => {
   return (
@@ -46,6 +24,7 @@ const ProductMain = () => {
           className="hidden md:block w-full h-[500px] object-fill"
         />
       </div>
+
       {/* Introductory Paragraph */}
       <div className="max-w-7xl mx-auto py-4 px-4 lg:px-8 pb-10">
         <motion.div
@@ -55,7 +34,9 @@ const ProductMain = () => {
           transition={{ duration: 0.9 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-bold mb-4 text-3xl"><span className="font-bold text-amber-500 text-3xl">Our</span> Product</h2>
+          <h2 className="font-bold mb-4 text-3xl">
+            <span className="font-bold text-amber-500 text-3xl">Our</span> Product
+          </h2>
           <p className="mb-4">
             We offer a comprehensive range of products and services under one
             roof—including Testing Instruments, FCT Fixtures, SMT Consumables,
@@ -77,8 +58,7 @@ const ProductMain = () => {
       </div>
 
       {/* Product Categories Grid */}
-      {/* Product Categories Grid */}
-      <div className="max-w-7xl mx-auto px-4 lg:px-8  pb-10">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {productCategories.map((category, index) => (
             <motion.div
@@ -125,25 +105,35 @@ const ProductMain = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom Banner with Button */}
         <div className="w-full relative mt-5">
-        {/* Mobile Banner */}
-        <img
-          src={Banner}
-          alt="Mobile Banner"
-          className="block md:hidden w-full h-[200px] object-fill"
-        />
-        {/* Desktop Banner */}
-        <img
-          src={Banner}
-          alt="Desktop Banner"
-          className="hidden md:block w-full h-[500px] object-fill"
-        />
-      </div>
+          {/* Mobile Banner */}
+          <img
+            src={Banner1}
+            alt="Mobile Banner"
+            className="block md:hidden w-full h-[200px] object-fill"
+          />
+          {/* Desktop Banner */}
+          <img
+            src={Banner1}
+            alt="Desktop Banner"
+            className="hidden md:block w-full h-[500px] object-fill"
+          />
+          {/* Centered Button Below Image */}
+          <div className="flex justify-center mt-2">
+            <a href="https://www.elpress.net/en-us/products/">
+              <button className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 text-lg">
+                View More
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
 
-      
-      <div className="">
-        <Vision/>
+      {/* Vision Component */}
+      <div>
+        <Vision />
       </div>
     </div>
   );
