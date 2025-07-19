@@ -125,6 +125,20 @@ const ProductMain = () => {
             </motion.div>
           ))}
         </div>
+        <div className="w-full relative mt-5">
+        {/* Mobile Banner */}
+        <img
+          src={Banner}
+          alt="Mobile Banner"
+          className="block md:hidden w-full h-[200px] object-fill"
+        />
+        {/* Desktop Banner */}
+        <img
+          src={Banner}
+          alt="Desktop Banner"
+          className="hidden md:block w-full h-[500px] object-fill"
+        />
+      </div>
       </div>
 
       
