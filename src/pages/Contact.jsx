@@ -2,7 +2,7 @@ import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 import Left from "../assets/New folder/R.jpg";
-import Banner from "../assets/Banner/Contactus.png";
+import Banner from "../assets/Banner/contact Us banner.png";
 
 const Contact = () => {
   return (
@@ -45,7 +45,7 @@ const Contact = () => {
           <MapPin className="w-5 h-5 mt-1 mr-2 text-orange-600" />
           <span>
             <strong>Ethotron Pvt Ltd</strong>, AHS-610, 6th Floor, Aditya High Street,
-            South Side GT Road Industrial Area, Ghaziabad (Delhi-NCR), India - 201009
+            South Side GT Road Industrial Area, Ghaziabad (Delhi-NCR), India-201009
           </span>
         </p>
         <p className="flex items-center">

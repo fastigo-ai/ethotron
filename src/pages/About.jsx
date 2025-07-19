@@ -10,7 +10,7 @@ import Welding from "../assets/New folder/Welding.jpg";
 import Medical from "../assets/New folder/Medical.jpg";
 import Electric from "../assets/New folder/Electric.jpg";
 import { motion } from "framer-motion";
-import Banner from "../assets/Banner/aboutus.jpg";
+import Banner from "../assets/Banner/about Us banner.png";
 import Vision from "./Vision";
 
 const industries = [
